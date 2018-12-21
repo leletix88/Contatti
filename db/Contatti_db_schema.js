@@ -30,6 +30,31 @@ const db_Contatti_db = [];
 
 
  /**
+  * Rubrica_telefonica
+  */
+db_Contatti_db_schema.Rubrica_telefonica = new mongoose.Schema({
+	cognome: {
+		type: 'String'
+	},
+	gruppo: {
+		type: 'String'
+	},
+	interno: {
+		type: 'String'
+	},
+	nome: {
+		type: 'String'
+	},
+	//RELATIONS
+	
+	
+	//EXTERNAL RELATIONS
+	/*
+	*/
+});
+
+
+ /**
   * User
   */
 db_Contatti_db_schema.User = new mongoose.Schema({
@@ -113,6 +138,7 @@ var Contatti_db_model = require('./Contatti_db_crud.js');
 
 // Declare mongoose model
 
+db_Contatti_db.Rubrica_telefonica = Contatti_db_model.connection.model('Rubrica_telefonica', db_Contatti_db_schema.Rubrica_telefonica );
 db_Contatti_db.User = Contatti_db_model.connection.model('User', db_Contatti_db_schema.User );
 db_Contatti_db.contatti = Contatti_db_model.connection.model('contatti', db_Contatti_db_schema.contatti );
 db_Contatti_db.domini_spc = Contatti_db_model.connection.model('domini_spc', db_Contatti_db_schema.domini_spc );

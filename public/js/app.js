@@ -30,6 +30,24 @@ var app = angular.module('Contatti_App', [
 		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.isAuthenticated(); }]
 	  },
 	})
+	.when('/rubrica_telefonicas/:id', {
+	  templateUrl: 'html/Rubrica_telefonicaEdit.html',
+	  resolve: {
+		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.isAuthenticated(); }]
+	  },
+	})
+	.when('/rubrica_telefonicas/:id', {
+	  templateUrl: 'html/Rubrica_telefonicaEdit.html',
+	  resolve: {
+		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.isAuthenticated(); }]
+	  },
+	})
+	.when('/rubrica_telefonicas', {
+	  templateUrl: 'html/Rubrica_telefonicaList.html',
+	  resolve: {
+		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.isAuthenticated(); }]
+	  },
+	})
 	.when('/contattis/:id', {
 	  templateUrl: 'html/contattiEdit.html',
 	  resolve: {

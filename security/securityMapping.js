@@ -24,6 +24,11 @@ exports.authMapping = {
     'POST - /api/users/([^/])+/changePassword': ["ADMIN"],
 
     //YOUR SECURITY MAPPING
+	'POST - /api/rubrica_telefonicas/*$' : [],
+	'DELETE - /api/rubrica_telefonicas/([^/])+$' : [],
+	'GET - /api/rubrica_telefonicas/([^/])+$' : [],
+	'GET - /api/rubrica_telefonicas/*$' : [],
+	'POST - /api/rubrica_telefonicas/([^/])+$' : [],
 	'POST - /api/Users/([^/])+/changePassword$' : ["ADMIN"],
 	'POST - /api/Users/*$' : [],
 	'DELETE - /api/Users/([^/])+$' : [],

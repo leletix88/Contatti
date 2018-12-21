@@ -29,6 +29,7 @@ connectDB = function()  {
 
 			require('./Contatti_db_schema.js');
 
+			require('../resource/Contatti_db/Rubrica_telefonica.js');
 			require('../resource/Contatti_db/User.js');
 			require('../resource/Contatti_db/contatti.js');
 			require('../resource/Contatti_db/domini_spc.js');

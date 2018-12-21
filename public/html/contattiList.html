@@ -1,0 +1,78 @@
+<!-- IMPORT MODULE DETAIL -->
+<!-- 
+
+	Module : 	contattiList
+	
+	Links : 	contattiEdit
+					/contattis/{id}
+.				
+	
+	Nesteds : 	
+				
+-->
+<!-- /IMPORT MODULE DETAIL -->
+<div ng-controller="contattiListController">
+	
+	<h1>Contatti Noc</h1>
+	
+	<!-- SEARCH FORM -->
+	<div class="well">
+	    <form name="form_search" class="container-fluid"></form>
+			<div class="row">
+			
+				<div class="col-sm-12 form-group" >
+					
+					<input type="text" ng-model="search" class="form-control" name="search" id="search" >
+
+				</div>
+				<div>
+						<div class="col-sm-12 form-group" >
+					
+												<!-- BUTTON -->
+	<button ng-auth="COORDINATOR"class="btn btn-primary" ng-link="/contattis/new">Nuovo</button>
+			
+							</div>
+
+
+	
+
+				</div>
+			</div>
+	
+		</form>
+	</div>
+	
+	<!-- TABLE -->
+	<table class="table table-condensed table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+					<th>nome</th>
+					<th>numero</th>
+					<th>mail</th>
+					<th>note</th>
+			
+			
+				
+			
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in list | filter: search | orderBy : 'nome'">
+					<td ng-bind="item.nome" ng-link="/contattis/{{item._id}}" ng-auth="COORDINATOR"></td>
+					<td ng-bind="item.nome"  ng-auth="USER"></td>
+					<td ng-bind="item.numero"></td>
+			
+				<td ng-bind="item.mail"></td>
+				
+				<td ng-bind="item.note"></td>
+			
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="mb-20" ng-if="list.$resolved && (list | filter :{   mail:search.mail,  nome:search.nome,  note:search.note,  numero:search.numero,  }).length == 0">
+        <b>No result found</b>
+    </div>
+
+
+</div>
